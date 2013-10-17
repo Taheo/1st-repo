@@ -1,7 +1,15 @@
 <h1>Welcome Soldiers</h1>
 <p>Here we stand</p>
+
 <%= link_to 'new unit', new_unit_path %>
- <% @units.each do |unit| %>
-    <br>
-    <%= unit.name %>
-<% end %>
+
+<ul>
+  <% @units.each do |unit| %>
+      <li>
+        <%= link_to unit.name, unit_path(unit) %>
+        <%= link_to 'edit', edit_unit_path(unit) %>
+        <%= link_to 'X', unit_path(unit),
+                    method: :delete, data: {confirm: 'Are you sure?'} %>
+      </li>
+  <% end %>
+</ul>
