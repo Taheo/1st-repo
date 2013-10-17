@@ -1,0 +1,7 @@
+<h1>Welcome Soldiers</h1>
+<p>Here we stand</p>
+<%= link_to 'new unit', new_unit_path %>
+ <% @units.each do |unit| %>
+    <br>
+    <%= unit.name %>
+<% end %>
