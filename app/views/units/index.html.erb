@@ -6,7 +6,7 @@
 <ul>
   <% @units.each do |unit| %>
       <li>
-        <%= link_to unit.name, unit_path(unit) %>
+        <%= link_to unit_name(unit), unit_path(unit) %>
         <%= link_to 'edit', edit_unit_path(unit) %>
         <%= link_to 'X', unit_path(unit),
                     method: :delete, data: {confirm: 'Are you sure?'} %>
