@@ -1,7 +1,2 @@
 <h1>Edit Unit</h1>
-<%=simple_form_for @unit do |f| %>
-    <%= f.input :name %>
-    <p>
-      <%= f.submit %>
-    </p>
-<% end %>
+<%= render partial: "form" %>
