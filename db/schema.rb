@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021092953) do
+ActiveRecord::Schema.define(version: 20131021102752) do
 
   create_table "unit_types", force: true do |t|
     t.string   "name"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20131021092953) do
     t.datetime "updated_at"
     t.integer  "unit_type_id"
     t.integer  "size"
+    t.boolean  "standar"
+    t.boolean  "champion"
+    t.boolean  "musician"
   end
 
   create_table "users", force: true do |t|
