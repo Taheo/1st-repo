@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018100758) do
+ActiveRecord::Schema.define(version: 20131021092953) do
 
   create_table "unit_types", force: true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131018100758) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "unit_type_id"
+    t.integer  "size"
   end
 
   create_table "users", force: true do |t|

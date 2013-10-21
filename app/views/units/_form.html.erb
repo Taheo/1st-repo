@@ -1,6 +1,7 @@
 <%= simple_form_for @unit do |f| %>
     <%= f.input :name %>
     <%= f.input :unit_type_id, as: :select, collection: UnitType.all %>
+    <%= f.input :size %>
     <p>
       <%= f.submit %>
     </p>
