@@ -43,6 +43,6 @@ class UnitsController < ApplicationController
 
   private
   def unit_params
-    params.require(:unit).permit(:name, :unit_type_id)
+    params.require(:unit).permit(:name, :unit_type_id, :size, :standar, :champion, :musician)
   end
 end

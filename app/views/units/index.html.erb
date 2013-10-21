@@ -1,4 +1,4 @@
-<h1>Welcome Our Lord</h1>
+<h1>Welcome Our Lord.</h1>
 <p>Here we stand, soldiers of the Empire. Awaiting command.</p>
 
 <%= link_to 'new unit', new_unit_path %>
@@ -7,9 +7,15 @@
   <% @units.each do |unit| %>
       <li>
         <%= link_to unit_name(unit), unit_path(unit) %>
+        <li>
+        Koszt: <%= unit.unit_type.cost %>
+        Rozmiar: <%= unit.size %>
+        Suma: <%= unit.cost %>
+        Grupa dowodzenia: <%= unit.command %>
         <%= link_to 'edit', edit_unit_path(unit) %>
         <%= link_to 'X', unit_path(unit),
                     method: :delete, data: {confirm: 'Are you sure?'} %>
+          </li>
       </li>
   <% end %>
 </ul>
