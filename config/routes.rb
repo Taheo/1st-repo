@@ -1,4 +1,5 @@
 FirstApp::Application.routes.draw do
+  devise_for :users
   resources :unit_types
 
   resources :units
