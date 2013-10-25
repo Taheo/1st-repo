@@ -1,0 +1,18 @@
+a {
+    color: black;
+
+}
+
+a:hover {
+    color: black;
+}
+
+#new_unit {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+#new_unit a {
+    color:firebrick;
+}

@@ -1,7 +1,9 @@
 class Unit < ActiveRecord::Base
   validates :name, presence: true, length: {minimum: 6}
   validates :size, presence: true
+  validates :unit_type, presence: true
   belongs_to :unit_type
+
 
   def cost
     result = size * unit_type.cost
