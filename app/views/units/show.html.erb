@@ -2,7 +2,9 @@
   <%= @unit.name %>
 </p>
 
+<%= render @unit %>
+
 <%= link_to 'All Units', units_path %>
-<%= link_to 'X', unit_path(@unit),
+<%= link_to 'delete', unit_path(@unit),
             method: :delete, data: {confirm: 'Are you sure?'} %>
 <%= link_to 'edit', edit_unit_path(@unit) %>

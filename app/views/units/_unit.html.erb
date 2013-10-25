@@ -1,0 +1,8 @@
+<ul>
+  <li>Koszt: <%= unit.unit_type.cost if unit.unit_type %> </li>
+  <li>Rozmiar: <%= unit.size %>              </li>
+  <li>Suma: <%= unit.cost %>                 </li>
+  <li>Grupa dowodzenia: <%= unit.command %> </li>
+  <%= link_to 'edit', edit_unit_path(unit) %> or <%= link_to 'delete', unit_path(unit),
+                                                             method: :delete, data: {confirm: 'Are you sure?'} %>
+</ul>

@@ -1,21 +1,26 @@
-<h1>Welcome Our Lord.</h1>
-<p>Here we stand, soldiers of the Empire. Awaiting command.</p>
+<h1><%= I18n.t 'hello' %></h1>
+<p>Here we stand, soldiers of the Empire. Awaiting your command.</p>
+<% if user_signed_in? %>
+    Signed In as <%= current_user.email %>. Not you my Lord ?
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+<br>
+<br>
+See <%= link_to 'Units', units_path %> or
 
-<%= link_to 'new unit', new_unit_path %>
-
+<%= link_to 'Unit types', unit_types_path %>
+<br>
+ <div id="new_unit">
+ <%= link_to 'new unit', new_unit_path %>
+</div>
 <ul>
   <% @units.each do |unit| %>
       <li>
-        <%= link_to unit_name(unit), unit_path(unit) %>
-        <li>
-        Koszt: <%= unit.unit_type.cost %>
-        Rozmiar: <%= unit.size %>
-        Suma: <%= unit.cost %>
-        Grupa dowodzenia: <%= unit.command %>
-        <%= link_to 'edit', edit_unit_path(unit) %>
-        <%= link_to 'X', unit_path(unit),
-                    method: :delete, data: {confirm: 'Are you sure?'} %>
-          </li>
+        <hr>
+        <%= link_to unit_name(unit), unit_path(unit) %> <%= image_tag unit.unit_type.image_url(:thumb) %>
+        <%= render unit %>
       </li>
   <% end %>
 </ul>

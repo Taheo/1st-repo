@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FirstApp</title>
+  <title>Roster Builder</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-    Signed In as <%= current_user.email %>. Not you ?
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
-<% end %>
-<br>
-<%= link_to 'Units', units_path %>
-<%= link_to 'Unit types', unit_types_path %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+    </div>
 
-<%= yield %>
+    <div class="span4">
 
+      <h2>About App</h2>
+
+      <p>Here you can see my Roster_Builder v.1.0
+        It will help with create your own Empire roster. You can also add contingent of Kislev troops, or Dogs of War.
+
+      </p>
+      <hr>
+    </div>
+    <div class="span4">
+
+      <h2>Functions</h2>
+
+
+      <ul>
+        <li>- Adding new type of units outside Empire Armybook</li>
+        <li>- Roster_Builder allow you to see roster in pretty readable format</li>
+
+
+      </ul>
+      <hr>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
